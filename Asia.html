@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical.Network</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <h2> Asia</h1>
+    </header>
+    <nav>
+        <!-- Menú de navegación -->
+        <ul>
+        
+        </ul>
+    </nav>
+    <main>
+        <!-- Contenido principal -->
+
+           <link rel="stylesheet" href="style.css"> 
+           <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical.Network</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <h2>¡Publicaciones!</h2>
+    </header>
+    <nav>
+        <!-- Menú de navegación -->
+        <ul>
+            <li><a href="Centroamerica.html">Centroamerica</a></li>
+           <li><a href="Sudamerica.html">Sudamerica</a></li>
+
+            <li><a href="Norteamerica.html">Norteamerica</a></li>
+            <li><a href="America del este.html">America del este</a></li>
+            <li><a href="America del oeste.html">America del oeste</a></li>
+            <link rel="stylesheet" href="style.css">
+        </ul>
+    </nav>
+    <main>
+
+
+
+
+
+        </section>
+
+
+    </header>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Comentarios con Opción de Eliminación</title>
+<style>
+  body { font-family: 'Arial', sans-serif; background-color: #f4f4f4; }
+  #seccion-comentarios { max-width: 800px; margin: auto; }
+  .comentario { background-color: #fff; margin: 10px 0; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: relative; }
+  .comentario-autor { font-weight: bold; color: #333; }
+  .comentario-texto { margin-top: 5px; color: #666; }
+  .eliminar-comentario { position: absolute; top: 10px; right: 10px; cursor: pointer; color: #900; }
+  #formulario-comentario { max-width: 800px; margin: 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+  #formulario-comentario input, #formulario-comentario textarea { width: 100%; margin-bottom: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 4px; }
+  #formulario-comentario button { padding: 10px 20px; background-color: #5cb85c; color: white; border: none; border-radius: 4px; cursor: pointer; }
+  #formulario-comentario button:hover { background-color: #4cae4c; }
+</style>
+</head>
+<body>
+
+<div id="seccion-comentarios"></div>
+
+<!-- Formulario para enviar comentarios -->
+<form id="formulario-comentario">
+  <input type="text" id="autor" placeholder="Tu nombre" required>
+  <textarea id="texto" placeholder="Tu comentario" required></textarea>
+  <button type="submit">Enviar Comentario</button>
+</form>
+
+<script>
+// Verificar si hay comentarios guardados en el almacenamiento local y mostrarlos
+document.addEventListener('DOMContentLoaded', function() {
+  if(localStorage.getItem('comentarios')) {
+    mostrarComentarios(JSON.parse(localStorage.getItem('comentarios')));
+  }
+});
+
+// Función para mostrar los comentarios
+function mostrarComentarios(comentarios) {
+  var seccionComentarios = document.getElementById('seccion-comentarios');
+  seccionComentarios.innerHTML = ''; // Limpiar la sección de comentarios
+
+  // Crear y añadir cada comentario al DOM
+  comentarios.forEach(function(comentario, index) {
+    var divComentario = document.createElement('div');
+    divComentario.classList.add('comentario');
+    divComentario.dataset.index = index;
+
+    var pAutor = document.createElement('p');
+    pAutor.classList.add('comentario-autor');
+    pAutor.textContent = comentario.autor;
+
+    var pTexto = document.createElement('p');
+    pTexto.classList.add('comentario-texto');
+    pTexto.textContent = comentario.texto;
+
+    var spanEliminar = document.createElement('span');
+    spanEliminar.classList.add('eliminar-comentario');
+    spanEliminar.textContent = 'X';
+    spanEliminar.onclick = function() { eliminarComentario(index); };
+
+    divComentario.appendChild(pAutor);
+    divComentario.appendChild(pTexto);
+    divComentario.appendChild(spanEliminar);
+
+    seccionComentarios.appendChild(divComentario);
+  });
+}
+
+// Función para manejar el envío del formulario
+document.getElementById('formulario-comentario').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  var autor = document.getElementById('autor').value;
+  var texto = document.getElementById('texto').value;
+
+  // Validación simple del formulario
+  if(autor.trim() === '' || texto.trim() === '') {
+    alert('Por favor, rellena todos los campos.');
+    return;
+  }
+
+  // Crear objeto de comentario
+  var nuevoComentario = { autor: autor, texto: texto };
+
+  // Guardar el nuevo comentario en el almacenamiento local
+  var comentarios = localStorage.getItem('comentarios') ? JSON.parse(localStorage.getItem('comentarios')) : [];
+  comentarios.push(nuevoComentario);
+  localStorage.setItem('comentarios', JSON.stringify(comentarios));
+
+  // Mostrar todos los comentarios incluyendo el nuevo
+  mostrarComentarios(comentarios);
+
+  // Limpiar el formulario
+  document.getElementById('formulario-comentario').reset();
+});
+
+// Función para eliminar un comentario
+function eliminarComentario(index) {
+  var comentarios = JSON.parse(localStorage.getItem('comentarios'));
+  comentarios.splice(index, 1); // Eliminar el comentario del array
+  localStorage.setItem('comentarios', JSON.stringify(comentarios)); // Actualizar el almacenamiento local
+  mostrarComentarios(comentarios); // Actualizar la lista de comentarios
+}
+</script>
+
+</body>
+</html>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandeja de Me Gusta</title>
+    <style>
+        .like-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .like-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .like-button:hover {
+            background-color: #0056b3;
+        }
+        .like-counter {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="like-container">
+        <button id="likeButton" class="like-button">Me gusta</button>
+        <div id="likeCounter" class="like-counter">0 Me gusta</div>
+    </div>
+
+    <script>
+        var likeCount = 0;
+        document.getElementById('likeButton').addEventListener('click', function() {
+            likeCount++;
+            document.getElementById('likeCounter').textContent = likeCount + ' Me gusta';
+        });
+    </script>
+</body>
+</html>
+        
+        <section>
+         

@@ -1,0 +1,9 @@
+body {
+  background-image: url('https://img.freepik.com/fotos-premium/brujula-que-apunta-al-liderazgo-mapa-creado-ia-generativa_419341-24254.jpg?w=360'); /* Reemplaza 'https://img.freepik.com/fotos-premium/brujula-que-apunta-al-liderazgo-mapa-creado-ia-generativa_419341-24254.jpg?w=360' con la ruta de tu imagen */
+ 
+  background-size: cover; /* Esto hará que la imagen cubra toda la página */
+ 
+  background-repeat: no-repeat; /* Esto evitará que la imagen se repita */
+ 
+  background-position: center center; /* Esto centrará la imagen en la página */
+}
